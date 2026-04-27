@@ -58,8 +58,11 @@ What does this repository do?
 
 ### Output
 ```
-This repository focuses on [project purpose], with key contributions in [modules/features]. 
-Recent commits indicate development in [specific area].
+This repository is an AI-powered GitHub analysis tool that allows users to query repositories using natural language.
+
+The project focuses on retrieving commit-level data and generating context-aware answers using a retrieval-augmented pipeline. Key components include an agent-based workflow, vector search using ChromaDB, and reasoning via a language model.
+
+Recent commits indicate development around improving retrieval accuracy and integrating tool-based query handling.
 ```
 
 ---
