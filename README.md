@@ -1,12 +1,22 @@
 # GitInsight
 
-GitInsight is an AI-powered GitHub repository analysis tool that enables users to ask natural language questions about any public repository and receive answers grounded in actual commit history. It combines retrieval-augmented generation with agent-based workflows to deliver meaningful, context-aware insights into codebases.
+AI-powered GitHub repository analysis using retrieval-augmented generation and agent-based workflows.
 
 ---
 
 ## Overview
 
-Understanding a new or large repository can be time-consuming. GitInsight simplifies this process by allowing users to interact with repositories conversationally. Instead of manually browsing commits and files, users can ask questions and receive precise answers derived directly from repository data.
+GitInsight enables users to interact with GitHub repositories using natural language. Instead of manually browsing commits, files, and contributors, users can ask questions and receive answers grounded in actual repository data.
+
+The system combines retrieval mechanisms with large language models to provide context-aware insights into codebases.
+
+---
+
+## Motivation
+
+Understanding unfamiliar or large repositories is often slow and inefficient. Developers must manually inspect commits, trace file changes, and interpret project structure.
+
+GitInsight addresses this problem by allowing users to query repositories conversationally and obtain precise, data-backed answers derived from commit history.
 
 ---
 
@@ -15,13 +25,13 @@ Understanding a new or large repository can be time-consuming. GitInsight simpli
 - Natural language querying of GitHub repositories  
 - Answers grounded in commit history and repository data  
 - Retrieval-Augmented Generation (RAG) to reduce hallucination  
-- Agent-based workflow powered by LangGraph  
-- Fast semantic search using vector embeddings (ChromaDB)  
+- Agent-based workflow using LangGraph  
+- Fast semantic search with ChromaDB  
 - Context-aware reasoning using Gemini  
 
 ---
 
-## Architecture
+## System Architecture
 
 ```
 User Query
@@ -39,6 +49,21 @@ Final Answer
 
 ---
 
+## Example Usage
+
+### Input
+```
+What does this repository do?
+```
+
+### Output
+```
+This repository focuses on [project purpose], with key contributions in [modules/features]. 
+Recent commits indicate development in [specific area].
+```
+
+---
+
 ## Project Structure
 
 ```
@@ -46,7 +71,7 @@ Gitinsight/
 │── agent.py        # Agent workflow logic
 │── app.py          # Application entry point
 │── ingest.py       # GitHub data ingestion
-│── loader.py       # Data loading and preprocessing
+│── loader.py       # Data preprocessing
 │── retriever.py    # Retrieval and vector search
 │── tools.py        # Tool integrations
 │── requirements.txt
@@ -57,14 +82,14 @@ Gitinsight/
 
 ## Installation
 
-### Clone the repository
+### Clone repository
 
 ```bash
 git clone https://github.com/Shreemadhi-B/Gitinsight.git
 cd Gitinsight
 ```
 
-### Create a virtual environment
+### Setup environment
 
 ```bash
 python -m venv venv
@@ -82,7 +107,7 @@ pip install -r requirements.txt
 
 ## Environment Variables
 
-Create a `.env` file in the root directory and add:
+Create a `.env` file:
 
 ```
 GITHUB_TOKEN=your_github_token
@@ -91,29 +116,22 @@ GOOGLE_API_KEY=your_gemini_api_key
 
 ---
 
-## Usage
-
-Run the application:
+## Running the Application
 
 ```bash
 python app.py
 ```
 
-Then provide a GitHub repository URL and ask questions such as:
-
-- What is the purpose of this repository?  
-- Who are the main contributors?  
-- What changes were made recently?  
-- Which parts of the codebase are most active?  
+Provide a GitHub repository URL and begin querying.
 
 ---
 
 ## Use Cases
 
-- Developers exploring unfamiliar repositories  
-- Recruiters evaluating candidate contributions  
-- Project managers analyzing development activity  
-- Students learning from open-source projects  
+- Exploring unfamiliar repositories  
+- Evaluating developer contributions  
+- Understanding project evolution  
+- Learning from open-source codebases  
 
 ---
 
@@ -129,15 +147,15 @@ Then provide a GitHub repository URL and ask questions such as:
 
 ## Limitations
 
-- Designed primarily for public repositories  
-- Large repositories may require additional ingestion time  
-- Subject to GitHub and API rate limits  
+- Designed for public repositories  
+- Performance depends on repository size  
+- Subject to API rate limits  
 
 ---
 
 ## License
 
-This project is licensed under the MIT License.
+MIT License
 
 ---
 
